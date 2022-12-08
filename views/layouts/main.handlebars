@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Crafty+Girls&family=Delius+Unicase&family=Gochi+Hand&family=Julee&family=Montserrat&family=Patrick+Hand+SC&family=Schoolbell&family=Walter+Turncoat&display=swap" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+		<script src="/index.js" charset="utf-8" defer></script>
+		<script src="/boardTemplate.js" charset="utf-8" defer></script>
+		<script src="/playerTemplate.js" charset="utf-8" defer></script>
+		<script type="module"src="/app.js" charset="utf-8" defer></script>
+		<script type="module" src="/singlePlayer.js" charset="utf-8" defer></script>
+		<script type="module" src="/multiPlayer.js" charset="utf-8" defer></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<title>TicTacToe Versus</title>
+	</head>
+	<body>
+		<header>
+			<h1 class="btn return-home-button" id="game-title">Tic-Tac-Toe Versus</h1>
+		</header>
+		{{{body}}}
+	</body>
+</html>

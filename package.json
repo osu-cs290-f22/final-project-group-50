@@ -1,0 +1,35 @@
+{
+  "name": "cs290_final",
+  "version": "1.0.0",
+  "description": "Multiplayer Tic Tac Toe Game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "nodemon server",
+    "build": "handlebars views/partials/board.handlebars -f public/boardTemplate.js",
+    "prestart": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benjamin-Anderson-II/CS290_Final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benjamin-Anderson-II/CS290_Final/issues"
+  },
+  "homepage": "https://github.com/Benjamin-Anderson-II/CS290_Final#readme",
+  "dependencies": {
+    "edit-json-file": "^1.7.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "fs": "^0.0.1-security",
+    "handlebars": "^4.7.7",
+    "socket.io": "^4.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

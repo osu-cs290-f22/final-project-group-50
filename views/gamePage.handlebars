@@ -1,0 +1,85 @@
+<div class="game-info-container">
+	{{#if multiplayer}}
+	<div class="room-id-display-container">
+		<r>Room ID: {{roomId}}</r>
+	</div>
+	{{/if}}
+	
+	<div class="name-container">
+		<div class="player-name" id="player-1-name">
+			{{p1}}
+		</div>
+		<div>VS</div>
+		<div class="player-name" id="player-2-name">
+			{{p2}}
+		</div>
+	</div>
+	<div class="connection-container">
+		<div class="p1">
+			<div class="player">
+				{{#if multiplayer}}
+				<div class="connected">Connected<span></span></div>
+				<div class="ready">Ready<span></span></div>
+				{{/if}}
+			</div>
+		</div>
+
+		<div class ="score-difficulty-container">
+			<div class="score-container">
+				<div class="score p1">0</div>
+				<div class="big-text">:</div>
+				<div class="score p2">0</div>
+			</div>
+			{{#if multiplayer}}
+				<div id="turn-display"></div>
+				<div class="ready-button-container">
+					<button id="ready-button" class="btn">READY-UP</button>
+				</div>
+			{{else}}
+				<div id="difficulty-container">
+					<select id="difficulty-dropdown">
+						<option value="easy" selected="selected">Easy</option>
+						<option value="impossible">Impossible</option>
+					</select>
+				</div>
+			{{/if}}
+		</div>
+		
+
+		<div class="p2">
+			<div class="player">
+				{{#if multiplayer}}
+				<div class="connected"><span></span>Connected</div>
+				<div class="ready"><span></span>Ready</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{{#each board}}
+{{> board}}
+{{/each}}
+
+<button class="btn" id="forfeit-button">FORFEIT</button>
+
+<div id="modal-backdrop" class="hidden"></div>
+<div id="play-again-modal" class="hidden">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<h2 id="winner"></h2>
+		</div>
+		<div class="modal-body">
+			<h3>Play Again?</h3>
+			<div class="replay-buttons-container">
+				<div class="play-again-button-container">
+					<button class="btn" id="play-again-button">Yes</button>
+				</div>
+				<div class="return-home-button-container">
+					<button class="return-home-button btn">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

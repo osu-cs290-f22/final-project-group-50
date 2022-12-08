@@ -1,0 +1,415 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	background-color: #F3F3F3;
+	overflow-x: hidden;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+header {
+	font-family: 'Bangers', cursive;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 33vh;
+}
+
+.splash-btn-container {
+	display: inline-flex;
+}
+
+#game-title {
+	font-size: 5rem;
+	background-color: unset;
+	padding: 0;
+}
+
+.btn {
+	background-color: hsl(210, 100%, 70%);
+	padding: .5em 1em;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: .2em;
+	color: #333;
+}
+
+.btn:hover, .btn:focus {
+	background-color: hsl(210, 100%, 65%);
+}
+
+.splash-btn {
+	font-size: 2rem;
+	margin-left: 2rem;
+}
+
+.splash-btn:first-child{
+	margin-left: 0;
+}
+
+.join-lobby-container {
+	display: inline-flex;
+	align-items: center;
+}
+
+#room-id-num {
+	width: 5rem;
+	margin-right: 1em;
+	font-size: 1.2rem;
+	border-radius: 3px;
+}
+
+.game-info-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.name-container {
+	margin-bottom: .5rem;
+}
+
+.connection-container, .name-container {
+	width: 100%;
+	display: inline-flex;
+	justify-content: center;
+}
+
+.name-container, .p1.score, .p2.score, .big-text{
+	font-size: 2rem;
+}
+
+.score-container{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0.75rem;
+}
+.score.p1, .score.p2 {
+	width: 1ch;
+}
+
+.room-id-display-container {
+	display: flex;
+	justify-content: center;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+.room-id-display-container r {
+	background-color: hsl(150, 100%, 75%);
+	width: fit-content;
+	border-radius: 4px;
+}
+
+.player-name {
+	min-width: 10ch;
+}
+
+#player-1-name{
+	text-align: right;
+	margin-right: 1em;
+}
+
+#player-2-name {
+	text-align: left;
+	margin-left: 1em;
+}
+
+.p1 {
+	width: 10.5ch;
+	margin-left: 1rem;
+}
+
+.p2 {
+	width: 10.5ch;
+	margin-right: 1rem;
+}
+
+.connected, .ready {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+span {
+	border-radius: 50%;
+}
+
+.score {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#forfeit-button {
+	background-color: hsl(210, 100%, 80%);
+	position: fixed;
+	left: 1em;
+	bottom: 1em;
+}
+
+:root {
+	--select-border: #777;
+	--select-focus: blue;
+	--select-arrow: var(--select-border);
+}
+
+select#difficulty-dropdown {
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+			appearance: none;
+	background-color: transparent;
+	border: none;
+	padding: 0 1em 0 0;
+	margin: 0;
+	width: 100%;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+	outline: none;
+}
+
+.score-difficulty-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#difficulty-container {
+	min-width: 11.5ch;
+	max-width: 11.5ch;
+	border: 1ps solid var(--select-border);
+	border-radius: 0.25em;
+	padding: 0.25em 0.5em;
+	font-size: 1.25rem;
+	cursor: pointer;
+	line-height: 1.1;
+	background-color: hsl(210, 100%, 70%);
+	display: grid;
+	grid-template-areas: "select";
+	align-items: center;
+	place-self: center;
+}
+
+#difficulty-container:after {
+	content: "";
+	width: 0.8em;
+	height: 0.5em;
+	background-color: var(--select-arrow);
+	-webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+	clip-path: polygon(100% 0, 0 0, 50% 100%);
+	justify-self: end;
+	pointer-events: none;
+}
+
+select#difficulty-dropdown, #difficulty-container:after {
+	grid-area: select;
+}
+
+#difficulty-container--disabled{
+	cursor: not-allowed;
+	background-color: #eee;
+	background-image: linear-gradient(to top, #ddd, #eee 33%);
+}
+
+.ready-button-container, #turn-display {
+	display: flex;
+	justify-content: center;
+}
+
+.ready-button-container--disabled {
+	display: none;
+}
+
+
+.room-id-container {
+	font-size: 1.2rem;
+}
+
+.error-header {
+	display: flex;
+	justify-content: center;
+	font-size: 2rem;
+}
+.error-header h2 {
+	margin-bottom: 0;
+}
+.error-body {
+	display: flex;
+	justify-content: center;
+	font-size: 1.5rem;
+}
+
+
+
+
+
+
+#play-space{
+	width: 100%;
+	height: 40vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+}
+
+.row {
+	display: flex;
+}
+
+.play-square {
+	background-color: inherit;
+	margin: 0px;
+	aspect-ratio: 1/1;
+	min-height: 10vh;
+	font-size: 7.5vh;
+}
+
+.play-square:hover{
+	cursor: pointer;
+}
+
+.play-square:disabled {
+	border-color: black;
+	color: black;
+	cursor: context-menu;
+}
+
+#topLeft {
+	border-style: none solid solid none;
+}
+#topCenter {
+	border-style: none solid solid solid;
+}
+#topRight {
+	border-style: none none solid solid;
+}
+
+#midLeft {
+	border-style: solid solid solid none;
+}
+#midCenter {
+	border-style: solid solid solid solid;
+}
+#midRight {
+	border-style: solid none solid solid;
+}
+
+#botLeft {
+	border-style: solid solid none none;
+}
+#botCenter {
+	border-style: solid solid none solid;
+}
+#botRight {
+	border-style: solid none none solid;
+}
+
+.connected, .ready {
+	font-weight: normal;
+}
+
+span {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	background: rgb(226,47,47);
+	background: radial-gradient(circle, rgba(226,47,47,1) 0%, rgba(226,47,47,1) 20%, rgba(213,0,0,1) 100%);
+}
+
+.inactive {
+	text-decoration: line-through;
+	opacity: 0.25;
+}
+
+span.green {
+	background: rgb(25,213,28);
+	background: radial-gradient(circle, rgba(25,213,28,1) 0%, rgba(25,213,28,1) 33%, rgba(21,140,23,1) 100%);
+}
+
+#modal-backdrop {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.65);
+}
+
+#play-again-modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1010;
+	overflow: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+.modal-dialog {
+	width: auto;
+	max-width: 600px;
+	min-width: 350px;
+	min-height: 200px;
+	margin: 40px auto;
+	background-color: #FFF;
+	border-radius: 15px;
+}
+
+.modal-header {
+	position: relative;
+	padding: 10px, 20px;
+}
+
+.modal-header h2 {
+	margin: 0;
+	font-family: 'Walter Turncoat', cursive;
+	font-size: 2.5rem;
+	display: flex;
+	justify-content: center;
+	height: 5rem;
+	align-items: flex-end;
+}
+
+.modal-body {
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.modal-body h3 {
+	font-size: 2em;
+	margin-top: .5em;
+}
+
+.replay-buttons-container {
+	display: flex;
+}
+
+.play-again-button-container, .return-home-button-container {
+	margin: 1em;
+}
+
+#play-again-button, .return-home-button {
+	font-size: 2.25em;
+}
